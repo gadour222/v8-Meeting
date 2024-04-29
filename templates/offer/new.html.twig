@@ -1,0 +1,38 @@
+{% extends 'baseMentor.html.twig' %}
+
+
+
+{% block body %}
+
+        
+        {{ form_start(form) }}
+        <div class="mb-3">
+            {{ form_label(form.title) }}
+            {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="mb-3">
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="mb-3">
+            {{ form_label(form.duration) }}
+            {{ form_widget(form.duration, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div class="mb-3">
+            {{ form_label(form.price) }}
+            {{ form_widget(form.price, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <div>
+        {{ form_widget(form.mentor, {'attr': {'class': 'form-control'}, 'value': app.user.id}) }}
+
+
+            </div>
+            
+       
+        <!-- Ajoutez d'autres champs de formulaire au besoin -->
+        <button type="submit" class="btn btn-primary">Soumettre</button>
+        {{ form_end(form) }}
+   
+
+
+{% endblock %}
